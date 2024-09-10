@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup Condition=" '$(OS.StartsWith(`Windows`))' == 'true' ">
+    <MSBUildProjectExtensionsPath>$(MSBuildThisFileDirectory)$(MSBuildProjectName)\obj-windows\</MSBUildProjectExtensionsPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)$(MSBuildProjectName)\bin-windows\</BaseOutputPath>
+    <NoWarn>MSB3539</NoWarn>    <!-- Temporary Suppress warning about BaseIntermediateOutputPath -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS.StartsWith(`Windows`))' != 'true' ">
+    <MSBUildProjectExtensionsPath>$(MSBuildThisFileDirectory)$(MSBuildProjectName)/obj-linux/</MSBUildProjectExtensionsPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)$(MSBuildProjectName)/bin-linux/</BaseOutputPath>
+    <NoWarn>MSB3539</NoWarn>    <!-- Temporary Suppress warning about BaseIntermediateOutputPath -->
+  </PropertyGroup>
+</Project>
